@@ -303,7 +303,7 @@ if ( typeof Object.create !== 'function' ) {
 
 
 				//create zoom window 
-				if(isNaN(self.options.zoomWindowPosition)){
+				if(isNaN(self.options.zoomWindowPosition) && (!typeof(self.options.zoomWindowPosition) == "function")){
 					self.zoomWindow = $("<div style='z-index:999;left:"+(self.windowOffsetLeft)+"px;top:"+(self.windowOffsetTop)+"px;" + self.zoomWindowStyle + "' class='zoomWindow'>&nbsp;</div>")
 					.appendTo('body')
 					.click(function () {
@@ -937,6 +937,9 @@ if ( typeof Object.create !== 'function' ) {
 					self.windowOffsetLeft =(self.nzWidth); //DONE 1, 2, 3, 4, 16
 					} 
 				} //end isNAN
+                else if (typeof(self.options.zoomWindowPosition) == "function") {
+                    self.options.zoomWindowPosition(self);
+                }
 				else{
 					//WE CAN POSITION IN A CLASS - ASSUME THAT ANY STRING PASSED IS
 					self.externalContainer = $('#'+self.options.zoomWindowPosition);
