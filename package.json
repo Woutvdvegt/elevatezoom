@@ -1,0 +1,12 @@
+{
+  "name": "elevatezoom",
+  "filename": "jquery.elevatezoom.js",
+  "version": "2.2.3",
+  "description": "elevateZoom - A jQuery image zoom plugin",
+  "homepage": "https://github.com/elevateweb/elevatezoom",
+  "main": "./jquery.elevatezoom.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Woutvdvegt/elevatezoom.git"
+  }
+}
